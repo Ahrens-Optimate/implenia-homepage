@@ -1,0 +1,63 @@
+---
+// Implenia-specific banner to show this is a dedicated solution
+---
+
+<div class="implenia-banner">
+  <div class="banner-container">
+    <p class="banner-text">
+      <strong class="banner-company">Presentation för Implenia Sverige AB</strong>
+    </p>
+  </div>
+</div>
+
+<style>
+  .implenia-banner {
+    background: linear-gradient(to right, var(--color-gray-900), var(--color-gray-800));
+    color: var(--color-white);
+    padding: var(--space-sm) 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: calc(var(--z-sticky) + 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .banner-container {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    text-align: center;
+  }
+
+  .banner-text {
+    font-size: 0.875rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+
+  .banner-label {
+    color: var(--color-gray-400);
+  }
+
+  .banner-company {
+    color: var(--color-white);
+    font-weight: var(--font-weight-semibold);
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .banner-text {
+      font-size: 0.75rem;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .banner-company {
+      font-size: 0.875rem;
+    }
+  }
+</style>

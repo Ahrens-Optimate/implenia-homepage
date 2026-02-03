@@ -1,0 +1,155 @@
+/* Ahrens Optimate Design System - CSS Variables
+ * Based on ahrens-optimate-theme-v2.json
+ * Version 2.0 - February 2026
+ */
+
+:root {
+  /* Primary Colors - Pink/Magenta Brand */
+  --color-pink: #ff0080;
+  --color-magenta: #e6006b;
+  --gradient-primary: linear-gradient(135deg, #ff0080 0%, #e6006b 100%);
+
+  /* Logo Colors - Metallic Silver (logo only) */
+  --color-silver-light: #c0c0c0;
+  --color-silver: #a8a8a8;
+  --color-silver-dark: #808080;
+
+  /* Accent Colors */
+  --color-gold: #f39c12;
+  --color-gold-light: rgba(243, 156, 18, 0.2);
+  --color-gold-dark: #c87f0a;
+
+  /* Secondary Colors - Purple (optional, use sparingly) */
+  --color-purple: #667eea;
+  --color-purple-dark: #764ba2;
+  --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-50: #f8f9fa;
+  --color-gray-100: #e9ecef;
+  --color-gray-200: #dee2e6;
+  --color-gray-300: #ced4da;
+  --color-gray-400: #adb5bd;
+  --color-gray-500: #6c757d;
+  --color-gray-600: #495057;
+  --color-gray-700: #343a40;
+  --color-gray-800: #212529;
+  --color-gray-900: #212529;
+
+  /* Semantic Colors */
+  --color-success: #d1e7dd;
+  --color-warning: #fff3cd;
+  --color-error: #f8d7da;
+  --color-info: #cfe2ff;
+
+  /* Typography */
+  --font-primary: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-code: 'Courier New', monospace;
+
+  /* Font Sizes */
+  --font-size-display: 3rem; /* 48px */
+  --font-size-h1: 2.5rem; /* 40px */
+  --font-size-h2: 2rem; /* 32px */
+  --font-size-h3: 1.5rem; /* 24px */
+  --font-size-body: 1rem; /* 16px */
+  --font-size-small: 0.875rem; /* 14px */
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+
+  /* Spacing */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+
+  /* Shadows - Pink-tinted for brand consistency */
+  --shadow-sm: 0 2px 4px rgba(255, 0, 128, 0.1);
+  --shadow-md: 0 4px 8px rgba(255, 0, 128, 0.15);
+  --shadow-lg: 0 5px 15px rgba(255, 0, 128, 0.4);
+  --shadow-pink-glow: 0 0 20px rgba(255, 0, 128, 0.3);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: all 0.15s ease;
+  --transition-default: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+
+  /* Z-index Layers */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal: 400;
+  --z-tooltip: 500;
+
+  /* Layout */
+  --max-width-content: 1200px;
+  --max-width-text: 800px;
+  --header-height: 80px;
+
+  /* Breakpoints (for reference in JS) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+/* Component Tokens */
+:root {
+  /* Buttons */
+  --btn-padding: 14px 28px;
+  --btn-padding-sm: 10px 20px;
+  --btn-padding-lg: 18px 36px;
+  --btn-border-radius: var(--radius-md);
+
+  /* Badges */
+  --badge-padding: 6px 12px;
+  --badge-border-radius: var(--radius-full);
+
+  /* Cards */
+  --card-padding: 25px;
+  --card-border-radius: var(--radius-md);
+  --card-shadow: var(--shadow-md);
+  --card-shadow-hover: var(--shadow-lg);
+
+  /* Input Fields */
+  --input-padding: 12px 16px;
+  --input-border: 2px solid var(--color-gray-300);
+  --input-border-focus: 2px solid var(--color-pink);
+  --input-border-radius: var(--radius-sm);
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 768px) {
+  :root {
+    --font-size-display: 2rem; /* 32px on mobile */
+    --font-size-h1: 1.75rem; /* 28px on mobile */
+    --font-size-h2: 1.5rem; /* 24px on mobile */
+    --font-size-h3: 1.25rem; /* 20px on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-display: 1.75rem; /* 28px on small mobile */
+    --font-size-h1: 1.5rem; /* 24px on small mobile */
+  }
+}

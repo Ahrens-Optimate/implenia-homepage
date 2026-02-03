@@ -1,0 +1,202 @@
+---
+// Hero section with animated gradient background
+import { Image } from 'astro:assets';
+import heroBackground from '../assets/images/hero-background.jpg';
+---
+
+<section class="hero hero-gradient" id="hero">
+  <Image
+    src={heroBackground}
+    alt="Infrastructure project"
+    class="hero-background"
+    loading="eager"
+    format="webp"
+    quality={80}
+  />
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Era stora digitaliseringsprojekt löser morgondagens utmaningar.<br />
+        <span class="hero-title-emphasis">Vi löser dagens.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Ahrens Optimate bygger snabba, lokala AI-automatiseringar för de dagliga processer
+        som stora transformationsprogram inte når. Prototyp på veckor. Återbetalning på månader.
+        Utan inlåsning.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-white btn-lg btn-glow">
+          Låt oss börja
+        </a>
+        <a href="#problem" class="btn btn-outline-white btn-lg">
+          Läs mer
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <span>↓</span>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    overflow: hidden;
+  }
+
+  /* Hero Background Image */
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  /* Background Image Overlay */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.85) 0%, rgba(230, 0, 107, 0.85) 100%);
+    z-index: 1;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+  }
+
+  .hero-content {
+    animation: fadeIn 1s ease-out;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: var(--space-xl);
+    color: var(--color-white);
+  }
+
+  .hero-title-emphasis {
+    display: block;
+    color: var(--color-white);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-2xl);
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: var(--space-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-outline-white {
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+  }
+
+  .btn-outline-white:hover {
+    background: var(--color-white);
+    color: var(--color-pink);
+  }
+
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: var(--space-2xl);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-indicator span {
+    font-size: 2rem;
+    color: var(--color-white);
+    opacity: 0.8;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(10px);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 90vh;
+      padding-top: var(--header-height);
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-cta .btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-indicator {
+      animation: none;
+    }
+  }
+</style>

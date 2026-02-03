@@ -1,0 +1,196 @@
+---
+// Solutions Section - 5 typical use cases
+import { Image } from 'astro:assets';
+import bidAnalysisImg from '../assets/images/solution-bid-analysis.jpg';
+import documentExtractionImg from '../assets/images/solution-document-extraction.jpg';
+import meetingNotesImg from '../assets/images/solution-meeting-notes.jpg';
+import invoiceControlImg from '../assets/images/solution-invoice-control.jpg';
+import knowledgeAssistantImg from '../assets/images/solution-knowledge-assistant.jpg';
+---
+
+<section id="solutions" class="solutions-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Typiska lösningar</h2>
+      <p class="section-subtitle">
+        Här är exempel på områden där vi vanligtvis hittar snabb effekt i
+        projektbaserade organisationer:
+      </p>
+    </div>
+
+    <div class="solutions-grid">
+      <div class="solution-card card hover-lift animate-fade-in">
+        <div class="solution-image">
+          <Image
+            src={bidAnalysisImg}
+            alt="Business document analysis"
+            width={600}
+            height={400}
+          />
+        </div>
+        <h3 class="card-title">Automatiserad jämförelse av underentreprenörsanbud</h3>
+        <p class="solution-description">
+          När tiotals anbud kommer in på samma upphandling går timmar åt att manuellt
+          jämföra priser, villkor, avvikelser och underlag. En AI-lösning kan läsa
+          anbuden, strukturera data i en matris, flagga avvikelser från
+          kravspecifikation och identifiera risker — på minuter istället för dagar.
+        </p>
+        <p class="solution-effect">
+          <strong>Typisk effekt:</strong> 60–80% tidsreduktion i anbudsutvärdering,
+          färre missade avvikelser, bättre beslutsunderlag.
+        </p>
+      </div>
+
+      <div class="solution-card card hover-lift animate-fade-in">
+        <div class="solution-image">
+          <Image
+            src={documentExtractionImg}
+            alt="Document extraction"
+            width={600}
+            height={400}
+          />
+        </div>
+        <h3 class="card-title">Automatisk dokumentextraktion från tekniska specifikationer</h3>
+        <p class="solution-description">
+          Tekniska specifikationer, beställningsunderlag och kontraktsbilagor innehåller
+          information som behöver extraheras och korskontrolleras manuellt. AI kan läsa,
+          klassificera och extrahera nyckelinformation från tusentals sidor till
+          strukturerade format.
+        </p>
+        <p class="solution-effect">
+          <strong>Typisk effekt:</strong> Dramatisk reduktion av manuell genomgång,
+          färre fel i dataöverföring.
+        </p>
+      </div>
+
+      <div class="solution-card card hover-lift animate-fade-in">
+        <div class="solution-image">
+          <Image
+            src={meetingNotesImg}
+            alt="Construction team meeting"
+            width={600}
+            height={400}
+          />
+        </div>
+        <h3 class="card-title">Mötesanteckningar till strukturerad projektrapport</h3>
+        <p class="solution-description">
+          Byggmöten, samordningsmöten, besiktningar — alla genererar anteckningar som
+          behöver sammanställas och distribueras. En AI-assistent kan transkribera,
+          strukturera och automatiskt fördela information till rätt projekt och rätt
+          mottagare.
+        </p>
+        <p class="solution-effect">
+          <strong>Typisk effekt:</strong> 15–30 minuter sparade per möte, konsekvent
+          dokumentation, ingenting faller mellan stolarna.
+        </p>
+      </div>
+
+      <div class="solution-card card hover-lift animate-fade-in">
+        <div class="solution-image">
+          <Image
+            src={invoiceControlImg}
+            alt="Invoice control and accounting"
+            width={600}
+            height={400}
+          />
+        </div>
+        <h3 class="card-title">Automatisk kontroll av leverantörsfakturor och ändringar</h3>
+        <p class="solution-description">
+          Fakturor som ska stämmas av mot avtal, ändrings- och tilläggsarbeten som ska
+          kontrolleras mot beställningar. AI kan automatisera korskontroller och flagga
+          avvikelser direkt — istället för manuellt detektivarbete.
+        </p>
+        <p class="solution-effect">
+          <strong>Typisk effekt:</strong> Snabbare fakturaflöde, färre tvister,
+          bättre kontroll.
+        </p>
+      </div>
+
+      <div class="solution-card card hover-lift animate-fade-in">
+        <div class="solution-image">
+          <Image
+            src={knowledgeAssistantImg}
+            alt="AI knowledge assistant chatbot"
+            width={600}
+            height={400}
+          />
+        </div>
+        <h3 class="card-title">Kunskapsassistent för projektteam</h3>
+        <p class="solution-description">
+          Varje stort projekt ackumulerar enorm kunskap — i mejl, protokoll,
+          ritningsunderlag, specifikationer. En AI-kunskapsassistent gör all denna
+          information sökbar och tillgänglig via enkel fråga-svar, direkt i Teams
+          eller webbgränssnitt.
+        </p>
+        <p class="solution-effect">
+          <strong>Typisk effekt:</strong> Snabbare onboarding av nya projektmedlemmar,
+          färre frågor som studsar runt i organisationen, bevarad projekterfarenhet.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .solutions-section {
+    padding: var(--space-3xl) 0;
+    background: var(--color-gray-50);
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    margin-top: var(--space-2xl);
+  }
+
+  .solution-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .solution-image {
+    width: 100%;
+    height: 250px;
+    margin-bottom: var(--space-md);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .solution-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .solution-description {
+    flex-grow: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .solution-effect {
+    background: var(--color-white);
+    padding: var(--space-md);
+    border-left: 3px solid var(--color-gold);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-small);
+    color: var(--color-gray-700);
+  }
+
+  .solution-effect strong {
+    color: var(--color-gold-dark);
+  }
+
+  @media (min-width: 768px) {
+    .solutions-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .solution-card:last-child {
+      grid-column: 1 / -1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+</style>

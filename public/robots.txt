@@ -1,0 +1,5 @@
+# robots.txt for implenia.ahrensoptimate.com
+User-agent: *
+Allow: /
+
+Sitemap: https://implenia.ahrensoptimate.com/sitemap.xml

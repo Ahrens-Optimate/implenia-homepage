@@ -1,0 +1,21 @@
+{
+  "name": "implenia-ahrensoptimate",
+  "version": "1.0.0",
+  "description": "Professional homepage for Ahrens Optimate - Implenia pitch",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": ["astro", "implenia", "ahrens-optimate"],
+  "author": "Ahrens Optimate",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "astro": "^5.17.1",
+    "typescript": "^5.9.3"
+  }
+}

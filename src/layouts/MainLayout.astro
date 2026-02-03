@@ -1,0 +1,179 @@
+---
+// Import CSS files
+import '../styles/variables.css';
+import '../styles/global.css';
+import '../styles/animations.css';
+import '../styles/components.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = 'Ahrens Optimate för Implenia | AI-Automatisering för Infrastrukturprojekt',
+  description = 'Snabba, lokala AI-automatiseringar för infrastrukturprojekt. Prototyp på veckor, återbetalning på månader. Vi löser de dagliga processer som stora transformationsprogram inte når.',
+  image = '/og-image.jpg',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="AI automation, infrastructure, Implenia, Sweden, OPTIMA, automatisering, byggprojekt, projektledning" />
+    <meta name="author" content="Ahrens Optimate" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:site_name" content="Ahrens Optimate" />
+    <meta property="og:locale" content="sv_SE" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.site)} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Ahrens Optimate",
+      "url": Astro.site,
+      "logo": new URL('/logo.png', Astro.site),
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "lars@ahrens.se",
+        "telephone": "+46-702-388999",
+        "contactType": "Sales"
+      }
+    })} />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ff0080" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+  </head>
+  <body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">
+      Hoppa till huvudinnehåll
+    </a>
+
+    <!-- Page Content -->
+    <slot />
+
+    <!-- Scroll Animation Script -->
+    <script>
+      // Intersection Observer for Scroll Animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all animated elements
+      document.addEventListener('DOMContentLoaded', () => {
+        const animatedElements = document.querySelectorAll(
+          '.animate-fade-in, .animate-slide-left, .animate-slide-right, .animate-scale'
+        );
+        animatedElements.forEach((el) => observer.observe(el));
+      });
+
+      // Smooth Scroll for Anchor Links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href && href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              const headerOffset = 80;
+              const elementPosition = target.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+
+      // Active Section Indicator (for navigation)
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute('id') || '';
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove('active');
+          const href = link.getAttribute('href');
+          if (href && href === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  /* Navigation Active State */
+  nav a.active {
+    color: var(--color-magenta);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-pink);
+  }
+</style>

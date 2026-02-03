@@ -1,0 +1,146 @@
+---
+// Team Section - 3 team member profiles
+import { Image } from 'astro:assets';
+import michaelPhoto from '../assets/images/michael-engstrom.jpg';
+import larsPhoto from '../assets/images/lars-diethelm.jpg';
+import ulfPhoto from '../assets/images/ulf-christiansson.jpg';
+---
+
+<section id="team" class="team-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Teamet</h2>
+      <p class="section-subtitle">
+        Ahrens Optimate kombinerar tre kompetenser som sällan finns i samma team:
+        storskalig verksamhetserfarenhet, kommersiell skärpa och teknisk implementation.
+      </p>
+      <p class="team-intro">
+        Vi arbetar med ett nätverk av specialister inom AI, automatisering och
+        verksamhetsutveckling — vilket ger oss tillgång till bred kompetens när projektet kräver det.
+      </p>
+    </div>
+
+    <div class="grid-3 team-grid">
+      <!-- Michael Engström -->
+      <div class="team-member animate-fade-in">
+        <div class="team-member-photo">
+          <Image
+            src={michaelPhoto}
+            alt="Michael Engström - Kundansvar & affärsutveckling"
+            width={400}
+            height={400}
+          />
+        </div>
+        <h3 class="team-member-name">Michael Engström</h3>
+        <p class="team-member-title">Kundansvar & affärsutveckling</p>
+        <p class="team-member-bio">
+          Michael är er första kontakt. Med över 30 års internationell erfarenhet från
+          bland annat Axis Communications och 14 år i internationella ledande roller
+          har han en sällsynt kombination av teknisk förståelse och affärsmässig skärpa.
+          Michael ansvarar för att förstå era utmaningar, säkerställa att vi fokuserar
+          på rätt saker och att samarbetet levererar mätbar nytta. Han har MBA från
+          University of Sheffield och verkar som styrelseordförande och styrelseledamot
+          i flera bolag.
+        </p>
+        <div class="team-member-contact">
+          <a href="mailto:michael.engstrom@ahrens.se">michael.engstrom@ahrens.se</a><br />
+          <a href="tel:+46763748769">0763-748 769</a>
+        </div>
+      </div>
+
+      <!-- Lars Diethelm -->
+      <div class="team-member animate-fade-in">
+        <div class="team-member-photo">
+          <Image
+            src={larsPhoto}
+            alt="Lars Diethelm - Lösningsarkitekt & förändringsledning"
+            width={400}
+            height={400}
+          />
+        </div>
+        <h3 class="team-member-name">Lars Diethelm</h3>
+        <p class="team-member-title">Lösningsarkitekt & förändringsledning</p>
+        <p class="team-member-bio">
+          Lars opererar i skärningspunkten mellan affärsbehov och teknisk lösning. Med
+          15+ år i IKEA:s toppskikt — där han öppnade verksamheten i 6 nya länder inom
+          ramen för Inter IKEA Systems — och erfarenhet från Harrods förstår han hur
+          stora organisationer faktiskt fungerar. Lars leder kartläggnings- och
+          prioriteringsarbetet, designar lösningar och säkerställer att förändringen
+          landar hos användarna.
+        </p>
+        <div class="team-member-contact">
+          <a href="mailto:lars@ahrens.se">lars@ahrens.se</a><br />
+          <a href="tel:+46702388999">0702-388 999</a>
+        </div>
+      </div>
+
+      <!-- Ulf Christiansson -->
+      <div class="team-member animate-fade-in">
+        <div class="team-member-photo">
+          <Image
+            src={ulfPhoto}
+            alt="Ulf Christiansson - Teknisk implementation"
+            width={400}
+            height={400}
+          />
+        </div>
+        <h3 class="team-member-name">Ulf Christiansson</h3>
+        <p class="team-member-title">Teknisk implementation</p>
+        <p class="team-member-bio">
+          Ulf är den som ansvarar för det vi bygger. Med 20 års erfarenhet av ledande
+          roller i internationella teknikföretag ansvarar han för teknisk arkitektur,
+          integration och implementation. Han säkerställer att lösningarna är robusta,
+          skalbara och fungerar med era befintliga system — utan att skapa nya beroenden.
+        </p>
+        <div class="team-member-contact">
+          <a href="mailto:ulf.christiansson@ahrens.se">ulf.christiansson@ahrens.se</a><br />
+          <a href="tel:+46733118210">0733-118 210</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-section {
+    padding: var(--space-3xl) 0;
+    background: var(--color-white);
+  }
+
+  .team-intro {
+    max-width: 700px;
+    margin: var(--space-lg) auto 0;
+    font-size: 1.125rem;
+    color: var(--color-gray-700);
+    font-weight: var(--font-weight-semibold);
+    background: var(--color-gray-50);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-pink);
+  }
+
+  .team-grid {
+    margin-top: var(--space-2xl);
+  }
+
+  .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+  }
+
+  @media (max-width: 1024px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style>

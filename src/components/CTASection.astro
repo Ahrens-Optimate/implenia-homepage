@@ -1,0 +1,183 @@
+---
+// Call to Action Section - Next Steps
+---
+
+<section id="contact" class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Nästa steg</h2>
+
+      <div class="cta-intro">
+        <h3>Vi börjar smått</h3>
+        <p>
+          Ett typiskt första steg är att vi tillsammans tittar på ett eller två konkreta
+          områden där ni känner att tid går åt till manuellt arbete. Inom 2–3 veckor har
+          ni en konkret bild av vad som går att automatisera, vad det ger och vad det kostar.
+        </p>
+        <p>
+          Ni äger alla resultat. Om ni väljer att gå vidare med oss — bra. Om ni vill
+          implementera själva eller med någon annan — lika bra. Vi tror på vår förmåga
+          att leverera nytta, inte på att låsa in er.
+        </p>
+      </div>
+
+      <div class="cta-meeting">
+        <div class="meeting-box">
+          <h3>Vi ser fram emot att träffas på tisdag, 10/2 kl 13.</h3>
+          <p>Kontakta gärna Lars för frågor.</p>
+        </div>
+
+        <div class="contact-cards">
+          <div class="contact-card">
+            <h4>Lars Diethelm</h4>
+            <p>Lösningsarkitekt & förändringsledning</p>
+            <div class="contact-links">
+              <a href="mailto:lars@ahrens.se" class="btn btn-white">
+                📧 lars@ahrens.se
+              </a>
+              <a href="tel:+46702388999" class="btn btn-white">
+                📞 0702-388 999
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-quote">
+        <blockquote>
+          "Låt oss börja med det som tar mest tid idag och gör minst nytta.
+          Där finns alltid den första automatiseringen."
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    padding: var(--space-3xl) 0;
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .cta-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: var(--font-size-display);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin-bottom: var(--space-xl);
+  }
+
+  .cta-intro {
+    margin-bottom: var(--space-2xl);
+    text-align: left;
+  }
+
+  .cta-intro h3 {
+    font-size: var(--font-size-h2);
+    color: var(--color-white);
+    margin-bottom: var(--space-lg);
+  }
+
+  .cta-intro p {
+    font-size: 1.125rem;
+    line-height: var(--line-height-normal);
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: var(--space-lg);
+  }
+
+  .meeting-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .meeting-box h3 {
+    font-size: var(--font-size-h2);
+    color: var(--color-white);
+    margin-bottom: var(--space-md);
+  }
+
+  .meeting-box p {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .contact-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .contact-card h4 {
+    font-size: var(--font-size-h3);
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact-card p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-lg);
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .contact-links .btn {
+    font-size: var(--font-size-small);
+  }
+
+  .cta-quote {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-2xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .cta-quote blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    padding: 0;
+    line-height: var(--line-height-relaxed);
+  }
+
+  @media (max-width: 768px) {
+    .cta-intro {
+      text-align: center;
+    }
+
+    .contact-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-card {
+      width: 100%;
+    }
+
+    .cta-quote blockquote {
+      font-size: 1.25rem;
+    }
+  }
+</style>
