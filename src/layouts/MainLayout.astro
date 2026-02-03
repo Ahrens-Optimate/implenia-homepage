@@ -115,8 +115,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
       // Smooth Scroll for Anchor Links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          const href = this.getAttribute('href');
+        anchor.addEventListener('click', (e) => {
+          const href = anchor.getAttribute('href');
           if (href && href !== '#') {
             e.preventDefault();
             const target = document.querySelector(href);
@@ -143,7 +143,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         sections.forEach((section) => {
           const el = section as HTMLElement;
           const sectionTop = el.offsetTop;
-          const sectionHeight = el.clientHeight;
           if (window.pageYOffset >= sectionTop - 100) {
             current = section.getAttribute('id') || '';
           }
