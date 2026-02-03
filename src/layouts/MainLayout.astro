@@ -141,8 +141,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
+          const el = section as HTMLElement;
+          const sectionTop = el.offsetTop;
+          const sectionHeight = el.clientHeight;
           if (window.pageYOffset >= sectionTop - 100) {
             current = section.getAttribute('id') || '';
           }
