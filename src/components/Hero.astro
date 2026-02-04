@@ -162,7 +162,7 @@ import heroBackground from '../assets/images/hero-background.jpg';
   @media (max-width: 768px) {
     .hero {
       min-height: 90vh;
-      padding-top: var(--header-height);
+      padding-top: 140px; /* Banner (50px) + Header (70px) + spacing (20px) */
     }
 
     .hero-title {
@@ -185,6 +185,10 @@ import heroBackground from '../assets/images/hero-background.jpg';
   }
 
   @media (max-width: 480px) {
+    .hero {
+      padding-top: 130px; /* Adjusted for smaller banner on very small screens */
+    }
+
     .hero-title {
       font-size: 1.75rem;
     }
